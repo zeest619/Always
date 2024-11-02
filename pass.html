@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <audio id="twinkleMusic" src="Twinkle Twinkle Little Star (Instrumental).mp3" preload="auto" loop></audio>
+
+    
+    <!-- Add type="module" to enable ES6 module support -->
+    
+</head>
+<body>
+
+
+  
+    
+
+    <div class="password-box">
+        <h2>Jee kon?</h2>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword();">Submit</button>
+          <p id="errorMessage" style="display: none; color: red;"></p>
+
+     
+
+        <p id="errorMessage" style="display: none;"></p>
+    </div>   
+
+    <div id="birthdayMessage" class="message-box" style="display:none;">
+        <div class="message-container">
+            <h1 class="sparkle">Happy Birthday, Iman Kashif!</h1>
+            <p class="sparkle">Hope your day is as bright as your eyes.</p>
+            <button onclick="revealMessage()">Click for a surprise</button>
+            <p id="hiddenMessage" style="display: none;">
+               
+                "You make everything brighter! 🌸 <br>
+                You make my heart lighter<br>
+                If the oceans turn to dust and the deserts flood<br>
+                If the sun fades and the moon burns up<br>
+                If I am given one more minute to breathe<br>
+                I would go back to the day you said<br>
+                Guru kuch nai hua. Pas"<br>
+
+                But you don't want to hear this, right?<br>
+                You would rather listen to<br>
+                anyone and everyone<br>
+                than me,<br>
+                even the dead.<br>
+                So maybe that's what we'll do.<br>
+                Some dead yet living<br>
+                wish to say something.<br>
+                <br>
+                Jane Austen<br>
+                <br>
+                "My dearest friend, on this most felicitous occasion of your birth, <br>
+                I cannot but express the warmest sentiments of affection and esteem. <br>
+                How fortunate the world is to be graced by your presence,<br>
+                 a true paragon of wit, grace, and good sense.<br>
+                  May this day, and all the days that follow,<br>
+                   be filled with the greatest joys, <br>
+                   unmarred by any vexations,<br>
+                    and may your path be ever illuminated by the happiness <br>
+                    you so richly deserve. Your worth, I need hardly say, <br>
+                    is far beyond any trifling praise I could offer.<br>
+                     Happy Birthday, most beloved of friends."<br>
+
+                     <br> 
+                     <br>
+
+                     Oscar Wilde<br>
+                     <br>
+                     "My dear friend,<br>
+                      how utterly delightful it is that we should celebrate <br>
+                      the anniversary of your arrival into this rather tiresome world.<br>
+                       You, who possess such a rare beauty of spirit,<br>
+                        are a beacon of charm and elegance,<br>
+                         standing gloriously apart from the ordinary. <br>
+                         May your day be filled with laughter, <br>
+                         the finest pleasures, and an abundance of wit, <br>
+                         for it is only the extraordinary who deserve anything at all. <br>
+                         To grow older is a privilege denied to many, but in you,<br>
+                          age shall only enhance what is already magnificent.<br>
+                           Happy Birthday, to the most brilliant of souls."<br>
+                           <br>
+                           <br>
+                           Virginia Woolf
+                           <br>
+                           "On this day, as the world turns and time flows endlessly, <br>
+                           I pause to reflect on the quiet beauty of your existence. <br>
+                           How extraordinary it is, the passage of days, years, <br>
+                           and yet how quietly significant each moment becomes <br>
+                           when touched by your presence. <br>
+                           Your life, woven with thought, <br>
+                           feeling, and memory,<br>
+                            stands like a ripple in the vast sea of time, enduring,<br>
+                             profound, luminous.<br>
+                              I wish for you,<br>
+                               on this birthday, <br>
+                               a time of stillness and joy,<br>
+                                a moment where all the fragments of life gather in harmony, <br>
+                                and you, <br>
+                                dear friend, are at the center, bright and unyielding.<br>
+                                 Happy Birthday."<br>
+                                 <br>
+                                 Ernest Hemingway <br>
+                                 "Happy Birthday. <br>
+                                 Today, we celebrate you.<br>
+                                  Another year added to the story you live,<br>
+                                   filled with moments both simple and profound. <br>
+                                   May the sun rise bright and warm,<br>
+                                    and may you find joy in the small things.<br>
+                                    A good book, a quiet place, the laughter of friends. <br>
+                                    Life is a series of days, <br>
+                                    each one a chance to find meaning. <br>
+                                    Take this day as it comes, <br>
+                                    and know that you are valued,<br>
+                                    know that you are loved,<br>
+                                    know that you are cherished<br>
+                                    know that you are longed for<br>
+                                     more than words can say. <br>
+                                     Here's to more years of living deeply and well.<br>
+                                     Happiest of birthday<br>
+                                     Dearest of all"<br>
+                                     <br>
+                                     Emerald and Bluberry<br>
+                                     "Chuu chuu chuuu chuuuuu!<br>
+                                     Chuu chuu chuuu chuuuuu!<br>
+                                     Chuu chuu chuuu chuuuuuuuuuu!<br>
+                                     Chuu chuu chuuu chuuuuu!"<br>
+                                     <br>
+                                     Well that's enough drama,no?<br>
+                                     I'm sure you have better things to do.<br>
+                                     But<br>
+                                     I think the heart knows what it wants<br>
+                                     So, maybe you should follow(Tap) the hearts.<br>
+                                     <br>
+
+                <button class="heart-button" onclick="loadVideoPage()">💕</button>
+            </p>
+        </div>
+    </div>
+
+    <video autoplay muted playsinline loop width="640" height="480">
+        <source src="Birthday.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Container for stars, hearts, and moon -->
+    <div class="balloons-container"></div>
+    <!-- Blue and Purple Hearts -->
+    <div class="blue-heart-container"></div>
+
+  
+    <script src="script.js" ></script> 
+
+</body>
+</html>

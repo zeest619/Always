@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
+    <link rel="stylesheet" href="video-page.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="video-container">
+        <!-- Left Side Video -->
+        <div class="side-video">
+            <video autoplay muted loop>
+                <source src="Black Animated Firework Happy New Year Instagram Post.mp4" type="video/mp4"> <!-- Replace with your video path -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Main Center Video -->
+        <div class="main-video">
+            <video id="myVideo" autoplay muted loop>
+                <source src="Black and Gold Animated 2024 Happy New Year Instagram Post (2).mp4" type="video/mp4"> <!-- Replace with your main video path -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Right Side Video -->
+        <div class="side-video">
+            <video autoplay muted loop>
+                <source src="Black Animated Firework Happy New Year Instagram Post.mp4" type="video/mp4"> <!-- Replace with your video path -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // Select the main video element to play it automatically
+        const video = document.getElementById('myVideo');
+        video.controls = false; // Hide controls
+        video.play();
+    </script>
+</body>
+</html>

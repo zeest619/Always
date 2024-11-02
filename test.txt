@@ -1,0 +1,3 @@
+<input type="text" id="riddle" placeholder="Enter" />
+
+<button id="submit-btn">Submit</button>

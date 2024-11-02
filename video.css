@@ -1,0 +1,238 @@
+/* Set the background color for the page */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Dark color background */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.03) 60%, transparent 80%);
+    pointer-events: none;
+    animation: bokeh 8s infinite alternate; /* Slower animation for a smoother effect */
+}
+
+@keyframes bokeh {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.5; }
+}
+
+
+.message-container {
+    width: 500px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Start stacking from top */
+    align-items: center; /* Center horizontally */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    padding: 20px; /* Inner padding */
+    position: relative; /* Ensure proper positioning */
+    
+    /* Pulsating glow animation */
+    animation: pulsateGlow 2s infinite;
+}
+
+@keyframes pulsateGlow {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(173, 216, 230, 0.5); /* Light blue initial glow */
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(173, 216, 230, 1); /* Maximum glow */
+    }
+    100% {
+        box-shadow: 0 0 10px 5px rgba(173, 216, 230, 0.5); /* Back to initial glow */
+    }
+}
+
+.message {
+    color: rgb(255, 255, 255); /* White text color */
+    font-family: 'Great Vibes', cursive; /* Font matching your project */
+    font-size: 1.5rem; /* Font size */
+    padding: 10px; /* Padding around the text */
+    text-align: center; /* Justify text for full line usage */
+    height: 300px; /* Fixed height for the message */
+    width: 550px; /* Increased width to fill more space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+
+/* Falling stars container */
+.falling-stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Star styles */
+.star {
+    position: absolute;
+    width: 20px;  /* Size of the star */
+    height: 20px; /* Size of the star */
+    background-color: gold; /* Bright color for the stars */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 1; /* Keep opacity for visibility */
+    animation: fall linear infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8)); /* Glowing effect */
+}
+
+/* Falling animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Existing styles */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    overflow: hidden; /* Hide any overflowing particles */
+    z-index: 0; /* Place behind the video */
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%; /* Make them circular */
+    background-color: rgba(255, 255, 255, 0.9); /* Bright glowing white color */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Glowing effect */
+    opacity: 0.8;
+    animation: float linear infinite; /* Animation for drifting effect */
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(30px, -30px) rotate(360deg); /* Rotate while floating */
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* Pulsating animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.1); /* Scale up */
+    }
+}
+
+/* Date container styles */
+.date-container {
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    background-color: transparent; /* Make the background completely transparent */
+    color: white; /* White text color */
+    padding: 10px; /* Some padding for aesthetics */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Great Vibes', cursive; /* Match the font used in your project */
+    font-size: 1.5rem; /* Font size */
+    z-index: 2; /* Ensure it is above other elements */
+    animation: pulse 1.5s infinite; /* Add pulsation effect */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), /* Glowing effect */
+                 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Moon Styling */
+.moon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 50% 50%, #fdfbd3, #f5f3b7 70%, #dcdba7 100%);
+    border-radius: 50%;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+/* Create the gibbous effect */
+.moon::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: black; /* Match background color to create the shadow */
+    border-radius: 50%;
+    top: 0;
+    left: 30px; /* Adjust to create the gibbous effect */
+}
+
+
+
+
+/* Moon Description */
+.moon-description {
+    position: absolute; /* Position it absolutely */
+    top: 180px; /* Adjust the position below the moon */
+    right: 0px; /* Align with the moon */
+    color: white; /* White text color */
+    padding: 15px; /* Padding around the text */
+    text-align: center; /* Center-align the text */
+    z-index: 2; /* Ensure it is above other elements */
+    max-height: 150px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+
+
+
+/*Buttons*/
+
+.button {
+    background-color: transparent; /* Transparent background */
+    color: white; /* Text color */
+    font-family: 'Great Vibes', cursive; /* Use Great Vibes font */
+    font-size: 1.5rem; /* Font size */
+    padding: 10px 20px; /* Padding around the text */
+    cursor: pointer; /* Pointer cursor on hover */
+   /* transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="instructions.css">
+</head>
+<body>
+    <div class="instructions-container">
+        <h1>Instructions</h1>
+        <p>Make sure the following are fulfilled</p>
+        <p>1. Laptop <br>
+            2.Earphones <br>
+            3.Alone  <br>
+            4.Full Brightness  <br>
+            5. DARK ROOM WILL BE PREFERRED. <br>
+        </p>
+        
+        <!-- Buttons at the bottom -->
+        <div class="button-container">
+            <button onclick="goToLogin()">Yes</button>
+            <button onclick="exploreMore()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function goToLogin() {
+            window.location.href = 'pass.html';
+        }
+        
+        function exploreMore() {
+            // Add your link or functionality here
+            window.location.href = 'tryagain.html';
+        }
+    </script>
+</body>
+</html>
