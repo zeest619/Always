@@ -3,7 +3,7 @@
 function checkPassword() {
     console.log('checkPassword function called'); 
     const passwordInput = document.getElementById("password").value;
-    const correctPassword = "yourPassword"; // Set your desired password for the riddle
+    const correctPassword = "Gurya"; // Set your desired password for the riddle
     const twinkleMusic = document.getElementById("twinkleMusic");
 
   
